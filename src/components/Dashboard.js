@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import classnames from "classnames";
 
 import Loading from "./Loading";
+import Panel from "./Panel";
 
 const data = [
   {
