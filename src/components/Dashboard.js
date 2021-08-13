@@ -34,8 +34,8 @@ class Dashboard extends Component {
     loading: false,
     focused: null
   };
-  
-  selectPanel(id) {
+
+  selectPanel = (id) => {
     this.setState({
      focused: id
     });
@@ -46,13 +46,13 @@ class Dashboard extends Component {
     const dashboardClasses = classnames("dashboard", {
       "dashboard--focused": this.state.focused
     });
-
-    const { id, label, value, onSelect } = this.props;    
     
     if (this.state.loading) {
       return <Loading />
     }
     
+
+
     const panels = data
       .filter(
         panel => this.state.focused === null || this.state.focused === panel.id
