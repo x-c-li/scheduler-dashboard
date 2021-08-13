@@ -50,8 +50,6 @@ class Dashboard extends Component {
     if (this.state.loading) {
       return <Loading />
     }
-    
-
 
     const panels = data
       .filter(
@@ -63,7 +61,7 @@ class Dashboard extends Component {
           id={panel.id}
           label={panel.label}
           value={panel.value}
-          onSelect={this.selectPanel}
+          onSelect={event => this.selectPanel(panel.id)}
         />
       ));
 
