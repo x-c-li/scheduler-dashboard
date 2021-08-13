@@ -39,12 +39,15 @@ class Dashboard extends Component {
     this.setState({
      focused: id
     });
-   }
+  }
 
   render() {
+    
     const dashboardClasses = classnames("dashboard", {
       "dashboard--focused": this.state.focused
     });
+
+    const { id, label, value, onSelect } = this.props;    
     
     if (this.state.loading) {
       return <Loading />
@@ -61,9 +64,13 @@ class Dashboard extends Component {
           label={panel.label}
           value={panel.value}
         />
-    ));
+      ));
 
-    return <main className={dashboardClasses}>{panels}</main>;
+    return (
+      <main className={dashboardClasses}>
+        {panels}
+      </main>
+    );
   }
 }
 
